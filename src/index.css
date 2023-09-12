@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(192, 192, 192, 0.702);
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #707eeb8a;
+    border-radius: 5px;
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+@font-face {
+    font-family: 'logo'; 
+    font-style: normal;
+    font-weight: 500;
+    src: local('logo'), url('/src/assets/fonts/logoFont.ttf') format('opentype');
+}
+  
+@font-face {
+    font-family: 'graphic'; 
+    font-style: normal;
+    font-weight: 300;
+    src: local('graphic'), url('/src/assets/fonts/Graphik Arabic ExtraLight.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'graphic'; 
+    font-style: normal;
+    font-weight: 400;
+    src: local('graphic'), url('/src/assets/fonts/Graphik Arabic Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'graphic'; 
+    font-style: normal;
+    font-weight: 500;
+    src: local('graphic'), url('/src/assets/fonts/Graphik Arabic Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'graphic'; 
+    font-style: normal;
+    font-weight: 700;
+    src: local('graphic'), url('/src/assets/fonts/Graphik Arabic Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'graphic'; 
+    font-style: normal;
+    font-weight: 800;
+    src: local('graphic'), url('/src/assets/fonts/Graphik Arabic Black.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'graphic'; 
+    font-style: normal;
+    font-weight: 900;
+    src: local('graphic'), url('/src/assets/fonts/Graphik Arabic Super.otf') format('opentype');
+}
