@@ -2,16 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 //icon
-import shopping from '../../assets/icon/shopping.svg'
+import {shopping} from '../../assets'
 
 const Navbar = () => {
     return (
-        <div className='flex' >
+        <div className='flex ' >
             <ul className='bg-gray-200 mr-24 h-12 items-center shadow-sm text-xs pr-8 flex gap-4 p-3 w-[65%] rounded-lg ' >
 
 <li className='hover:text-blue-500 hover:border-b-2 border-dashed  rounded-sm
 pb-1 border-blue-400' >
     <Link> کالای دیجیتال </Link>
+</li>
+<li className='hover:text-blue-500 hover:border-b-2 border-dashed  rounded-sm
+pb-1 border-blue-400' >
+    <Link> موبایل </Link>
 </li>
 <li className='hover:text-blue-500 hover:border-b-2 border-dashed  rounded-sm
 pb-1 border-blue-400' >
@@ -41,7 +45,7 @@ pb-1 border-blue-400' >
                 text-white mr-10  ' > 
                 <img className='w-6 absolute top-1/4 right-3' src={shopping} alt="icon" />
                 <span className='absolute left-1/3 top-1/4'>سبد خرید </span>
-                <span className='bg-white absolute  left-4  text-green-600 w-5 text-center items-center   h-5 top-1/4  rounded-xl'> 0 </span> 
+                <span className='bg-white absolute flex justify-center font-[iran]  left-4  text-green-600 w-5 text-center items-center   h-5 top-1/4  rounded-full overflow-hidden '> 0 </span> 
                 
                  </button>
                  </div>

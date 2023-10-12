@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 import pic from "../../assets/login.jpg";
-import loading from '../../assets/gif/loading.gif';
+import {loading} from '../../assets';
 
 import { useNavigate } from "react-router-dom";
 

@@ -4,10 +4,10 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 //icon
-import phoneIcon from "../../assets/icon/phone.svg";
+import {phone} from "../../assets";
 
 import logpic from "../../assets/logpic.jpg";
-// import { POST_DATA } from "../../services/API";
+
 import { useNavigate, Link } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -77,7 +77,7 @@ const RegisterAndLoginPage = () => {
                     placeholder="شماره موبایل"
                   />
                   <img
-                    src={phoneIcon}
+                    src={phone}
                     alt="icon"
                     className="absolute top-1/2 left-2 -translate-y-1/2"
                   />

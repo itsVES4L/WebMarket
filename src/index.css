@@ -7,6 +7,7 @@
 
 ::-webkit-scrollbar {
     width: 4px;
+    height: 4px;
 }
   
 /* Track */
@@ -73,4 +74,12 @@
     font-style: normal;
     font-weight: 900;
     src: local('graphic'), url('/src/assets/fonts/Graphik Arabic Super.otf') format('opentype');
+}
+
+
+@font-face {
+    font-family: 'iran'; 
+    font-style: normal;
+    font-weight: 500;
+    src: local('iran'), url('/src/assets/fonts/iranS.ttf') format('opentype');
 }

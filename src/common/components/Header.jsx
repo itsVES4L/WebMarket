@@ -4,8 +4,8 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 //icon
-import person from "../../assets/icon/person.svg";
-import search from "../../assets/icon/search.svg";
+
+import { search , person} from "../../assets";
 import Navbar from "./Navbar";
 
 const Header = () => {
@@ -14,7 +14,7 @@ const Header = () => {
   return ( 
 <>
 
-<div className=" mt-3  h-28 sticky top-4 ">
+<div className=" pt-0 mb-4   z-50 rounded-full border-dotted border-b-2 h-40 sticky top-0 bg-white border-b-blue-300  ">
       <div className="bg-white mb-3 h-3/6 flex justify-around items-center ">
         <Link
           to={"/"}
