@@ -27,12 +27,12 @@ export default function StorePage() {
     <>
     <Header/>
     <div className="w-screen flex justify-center items-center">
-    <div className="bg-white flex flex-row flex-wrap gap-2 p-4 w-fit justify-center rounded-lg h-fit m-20">
+    <div className="bg-white flex flex-row flex-wrap gap-2 p-4 w-fit justify-center rounded-lg h-fit ">
       {isLoading
         ? arr.map((product, i) => <ProductCardLoading />)
         : productList.map((product, i) => (
-          <ProductCard product={product} key={i} />
-          ))}
+          
+          <ProductCard product={product} key={i} />))}
     </div>
   </div>
   <Footer/>

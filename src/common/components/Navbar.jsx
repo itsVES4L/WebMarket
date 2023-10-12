@@ -6,7 +6,7 @@ import {shopping} from '../../assets'
 
 const Navbar = () => {
     return (
-        <div className='flex ' >
+        <div className=' hidden sm:flex ' >
             <ul className='bg-gray-200 mr-24 h-12 items-center shadow-sm text-xs pr-8 flex gap-4 p-3 w-[65%] rounded-lg ' >
 
 <li className='hover:text-blue-500 hover:border-b-2 border-dashed  rounded-sm
