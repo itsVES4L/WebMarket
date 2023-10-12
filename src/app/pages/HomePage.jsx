@@ -67,7 +67,7 @@ const HomePage = () => {
           <div className=" sm:w-screen flex justify-center mb-10">
             <div
               className="
-                bg-gray-200 flex flex-col  items-center w-fit p-8 shadow-xl shadow-inner  rounded-3xl "
+                bg-gray-200 flex flex-col  items-center w-fit p-8 shadow-xl   rounded-3xl "
             >
               <p className=" mb-6 text-2xl">
                 {" "}

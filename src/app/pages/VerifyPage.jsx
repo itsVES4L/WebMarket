@@ -42,7 +42,7 @@ const VerifyPage = () => {
     }),
   });
 
-  return (<>
+  return (<div>
   
   
   <section className="  w-screen bg-gray-50 h-screen  flex items-center justify-center ">
@@ -99,7 +99,7 @@ const VerifyPage = () => {
         </div>
       </div>
     </section>
-  </>
+  </div>
   );
 };
 
