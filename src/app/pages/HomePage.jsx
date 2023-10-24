@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 // import { LOGOUT } from "../../services/API";
 
@@ -6,24 +6,83 @@ import { digitalBanner } from "../../assets";
 import { getProductsList } from "../../features/products/getProductsListSlice";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  CategoryCard,
   Footer,
   Header,
   ProductCard,
   ProductCardLoading,
 } from "../../common/components";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+// import required modules
+import { Pagination, Navigation } from "swiper/modules";
+
+import "swiper/css";
+
 const HomePage = () => {
+ 
+  const windowSize =useRef(window.innerWidth);
+  const slidesPerView = (windowSize.current > 768 ? 4 : 1.75)
+  console.log(slidesPerView);
+
+  const category = [
+    {
+      title: "کالای دیجیتال",
+      url: "https://www.hypershop.com/cdn/shop/products/MicrosoftTeams-image_45_b904358c-da41-4816-8cc7-55e44cf5c211_1024x1024.jpg?v=1676654143",
+      id: 1,
+    },
+
+    {
+      title: "موبایل",
+      url: "https://dkstatics-public.digikala.com/digikala-products/ec9a962187e1f82cc47e7a148ef99ec1c6fd024d_1656423336.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80",
+      id: 12,
+    },
+    {
+      title: "مد و پوشاک",
+      url: "https://dkstatics-public.digikala.com/digikala-products/fb08089406e270d15ef5bcf9475d0078b74852c1_1674574858.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80",
+      id: 123,
+    },
+    {
+      title: "خانه و آشپزخانه",
+      url: "https://dkstatics-public.digikala.com/digikala-products/abc769f82171fb0d67b6f61fc21d52f36804a7ba_1662355794.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80",
+      id: 1234,
+    },
+    {
+      title: "لوازم تحریر و هنر",
+      url: "https://dkstatics-public.digikala.com/digikala-products/367a87093530a231848ce0e28453c93b34d427a5_1659334108.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80",
+      id: 12345,
+    },
+    {
+      title: "لپ تاپ",
+      url: "https://dkstatics-public.digikala.com/digikala-products/b2c0eb53f0eeacdefb8771155bf5e4887222a654_1672051046.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80",
+      id: 123456,
+    },
+    {
+      title: "آرایشی و بهداشتی",
+      url: "https://dkstatics-public.digikala.com/digikala-products/f549c48174cf8a15e7c192166f7afdf01b077c60_1690963563.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80",
+      id: 1234567,
+    },
+    {
+      title: "ابزارآلات",
+      url: "https://dkstatics-public.digikala.com/digikala-products/29eba33e742fcbe13761a25fbf1f0c01e292ce57_1689853757.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80",
+      id: 12345678,
+    },
+  ];
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getProductsList()).then();
   }, []);
-  
+
   const isLoggedIn = useSelector((state) => state.productList.isLoggedIn);
   const error = useSelector((state) => state.productList.error);
   const isLoading = useSelector((state) => state.productList.isLoading);
- 
 
   const logOutHandler = () => {
     // LOGOUT("/auth/logout/");
@@ -64,7 +123,7 @@ const HomePage = () => {
           {/* 
 // Category */}
 
-          <div className=" sm:w-screen flex justify-center mb-10">
+          <div className=" sm:w-screen w-full flex justify-center mb-10">
             <div
               className="
                 bg-gray-200 flex flex-col  items-center w-fit p-8 shadow-xl   rounded-3xl "
@@ -78,78 +137,34 @@ const HomePage = () => {
                 </span>{" "}
               </p>
 
-              <div className="  grid grid-cols-3  justify-center items-center sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4  gap-4 ">
-
-
-
-
-
-                <div className="bg-white  flex flex-col items-center  rounded-xl p-6 sm:h-64 w-[200px] shadow-sm hover:shadow-2xl transition-shadow ease-in delay-300 text-center cursor-pointer">
-                  <img
-                    className="w-40"
-                    src="https://www.hypershop.com/cdn/shop/products/MicrosoftTeams-image_45_b904358c-da41-4816-8cc7-55e44cf5c211_1024x1024.jpg?v=1676654143"
-                    alt="ساعت"
-                  />
-                  <p className="mt-4">کالای دیجیتال</p>
-                </div>
-                <div className="bg-white  flex flex-col items-center  rounded-xl p-6 sm:h-64 w-[200px] shadow-sm hover:shadow-2xl transition-shadow ease-in delay-300 text-center cursor-pointer">
-                  <img
-                    className="w-40"
-                    src="https://dkstatics-public.digikala.com/digikala-products/ec9a962187e1f82cc47e7a148ef99ec1c6fd024d_1656423336.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80"
-                    alt="عکس"
-                  />
-                  <p className="mt-4"> موبایل </p>
-                </div>
-                <div className="bg-white  flex flex-col items-center  rounded-xl p-6 sm:h-64 w-[200px] shadow-sm hover:shadow-2xl transition-shadow ease-in  delay-300 text-center cursor-pointer">
-                  <img
-                    className="w-40"
-                    src="https://dkstatics-public.digikala.com/digikala-products/fb08089406e270d15ef5bcf9475d0078b74852c1_1674574858.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80"
-                    alt="عکس"
-                  />
-                  <p className="mt-4"> مد و پوشاک</p>
-                </div>
-                <div className="bg-white  flex flex-col items-center  rounded-xl p-6 sm:h-64 w-[200px] shadow-sm hover:shadow-2xl transition-shadow ease-in  delay-300 text-center cursor-pointer">
-                  <img
-                    className="w-40"
-                    src="https://dkstatics-public.digikala.com/digikala-products/abc769f82171fb0d67b6f61fc21d52f36804a7ba_1662355794.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80"
-                    alt="عکس"
-                  />
-                  <p className="mt-4"> خانه و آشپزخانه</p>
-                </div>
-                <div className="bg-white flex flex-col items-center rounded-xl p-6 sm:h-64 w-[200px] shadow-sm hover:shadow-2xl transition-shadow ease-in delay-300 text-center cursor-pointer">
-                  <img
-                    className="w-40"
-                    src="https://dkstatics-public.digikala.com/digikala-products/367a87093530a231848ce0e28453c93b34d427a5_1659334108.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80"
-                    alt="عکس"
-                  />
-                  <p className="mt-4"> لوازم تحریر و هنر</p>
-                </div>
-                <div className="bg-white  flex flex-col items-center  rounded-xl p-6 sm:h-64 w-[200px] shadow-sm hover:shadow-2xl transition-shadow ease-in  delay-300 text-center cursor-pointer">
-                  <img
-                    className="w-40"
-                    src="https://dkstatics-public.digikala.com/digikala-products/b2c0eb53f0eeacdefb8771155bf5e4887222a654_1672051046.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80"
-                    alt="عکس"
-                  />
-                  <p className="mt-4"> لپ تاپ </p>
-                </div>
-                <div className="bg-white  flex flex-col items-center  rounded-xl p-6 sm:h-64 w-[200px] shadow-sm hover:shadow-2xl transition-shadow  ease-in delay-300 text-center cursor-pointer">
-                  <img
-                    className="w-40"
-                    src="https://dkstatics-public.digikala.com/digikala-products/f549c48174cf8a15e7c192166f7afdf01b077c60_1690963563.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80"
-                    alt=""
-                  />
-                  <p className="mt-4"> آرایشی و بهداشتی </p>
-                </div>
-
-                <div className="bg-white flex flex-col items-center rounded-xl p-6 sm:h-64 w-[200px] shadow-sm hover:shadow-2xl transition-shadow ease-in delay-300 text-center cursor-pointer">
-                  <img
-                    className="w-40"
-                    src="https://dkstatics-public.digikala.com/digikala-products/29eba33e742fcbe13761a25fbf1f0c01e292ce57_1689853757.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80"
-                    alt=""
-                  />
-                  <p className="mt-4"> ابزار آلات </p>
-                </div>
-                
+              <div className=" w-[70vw]  sm:w-[80vw] flex justify-center items-center  ">
+                <Swiper
+                  dir="rtl"
+                  slidesPerView={slidesPerView}
+                  loop={true}
+                  centeredSlides={true}
+                  
+                  spaceBetween={5}
+                  pagination={{
+                    clickable: true,
+                    el: ".pagination-continer",
+                  }}
+                  navigation={true}
+                  modules={[Pagination, Navigation]}
+                >
+                  {category.map((item, i) => (
+                    <SwiperSlide
+                      className=" m-2 "
+                      style={{ width: "fit-content", borderRadius: "12px" }}
+                      key={item.id}
+                    >
+                      <Link to={"/store"}>
+                        <CategoryCard url={item.url} title={item.title} />
+                      </Link>
+                    </SwiperSlide>
+                  ))}
+                  <div className="pagination-continer m-4 flex gap-2 justify-center "></div>
+                </Swiper>
               </div>
             </div>
           </div>
@@ -185,7 +200,6 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-
         </section>
       </div>
       <Footer />

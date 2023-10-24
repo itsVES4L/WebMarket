@@ -2,7 +2,7 @@ import React from "react";
 
 const Comment = ({ name, des, title }) => {
   return (
-    <div className="relative  bg-gray-200 m-6 p-4  gap-3 rounded-xl min-h-[200px] h-fit ">
+    <div className="relative  w-[500px] bg-gray-200 m-3 p-4  gap-3 rounded-xl min-h-[150px] h-fit ">
       
      
      
